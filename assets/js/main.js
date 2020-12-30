@@ -60,12 +60,7 @@ $(".donwload-project").click(function(){
     urlProjects = $(this).val();
 
     if (urlProjects === "this-page") {
-        password = prompt("Esta acción requiere una contraseña:");
-        if (password == "bf0a6f09d389da7b0166630e15f4fdb2"){
-            location.href='https://drive.google.com/u/0/uc?id=17AHyTxHx9C5Sq354qtxpG0krFOMnZCvh&export=download';
-        } else {
-            alert("¡Contraseña inválida!");
-        }
+        location.href='https://drive.google.com/u/0/uc?id=17AHyTxHx9C5Sq354qtxpG0krFOMnZCvh&export=download';
     } else {
         switch (urlProjects) {
             case "python":
