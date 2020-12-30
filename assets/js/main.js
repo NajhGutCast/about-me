@@ -60,7 +60,7 @@ $(".donwload-project").click(function(){
     urlProjects = $(this).val();
 
     if (urlProjects === "this-page") {
-        location.href='https://drive.google.com/u/0/uc?id=17AHyTxHx9C5Sq354qtxpG0krFOMnZCvh&export=download';
+        location.href='https://github.com/NajhGutCast/about-me';
     } else {
         switch (urlProjects) {
             case "python":
