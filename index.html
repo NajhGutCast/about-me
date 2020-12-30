@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Kizzi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/slippry.css">
+    <link rel="stylesheet" href="assets/css/header_style.css">
+    <link rel="stylesheet" href="assets/css/footer_style.css">
+    <script text="type/javascript" src="assets/js/main.js"></script>
+    <script text="type/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <audio src="snds/bg-sound.mp3" type="audio/mp3" autoplay loop></audio>
+    <nav>
+        <div>
+            <ul class="links">
+                <li class="selected">Inicio</li>
+                <li onclick="location.href='experience.html'">Experiencia</li>
+                <li onclick="location.href='projects.html'">Proyectos</li>
+                <li onclick="location.href='contact.html'">Contacto</li>
+            </ul>
+            <details class="links-mobile">
+                <summary>Inicio</summary>
+                <button onclick="location.href='experience.html'">Experiencia</button><br>
+                <button onclick="location.href='projects.html'">Proyectos</button><br>
+                <button onclick="location.href='contact.html'">Contacto</button>
+            </details>
+        </div>
+    </nav>
+
+    <main class="index">
+        <img src="img/this-is-me.png" alt="">
+        <div id="about-me">
+            <h1>Ruth Najhely Gutierrez Castro</h1>
+            <button id="button1" class="active">Español</button><button id="button2" class="non-active">Inglés</button>
+            <p id="description-about-me">Ella soy yo, natural de la ciudad de Ayacucho - Huamanga. Estoy
+                cursando la carrera de Ingeniería de Software con Inteligencia
+                Artificial en el Intituto de Senati, para ser mas especifico,
+                en el CFP de Ayacucho.<br><br>
+                Estudié mi primaria en la institución Abraham Valdelomar, ubicado
+                en el distrito Carmen Alto. Mis dos primeros años de educación secundaria
+                la lleve en el Colegio Abraham Valdelomar, mientras que
+                mis ultimos tres grados de secundaria las lleve en el 
+                Colegio de Alto Rendimiento de Ayacucho (CoAR Ayacucho).<br><br>
+                En el cuarto y quinto grado del CoAR Ayachucho, cursé y culminé
+                satisfactoriamente el Programa Diploma del Bachillerato
+                Internacional. Asimismo, alcancé un nivel intermedio en el
+                habla inglesa.<br><br>
+                En mi último año en el CoAR logré llegar a la Etapa Nacional en
+                los Juegos Florales del Perú en la Disciplina de Robótica y
+                programación.<br><br>
+                Mis gustos actualmente tienen que ver con la robótica, la
+                programación y la inteligencia Artificial, del mismo modo,
+                facilitar la vida de las personas a través del uso de la tecnología
+                y los distintos avances que pueda tener.
+            </p>
+        </div>
+    </main>
+    <main>
+        <fieldset>
+            <legend>Experiencias en los Juegos Florales</legend>
+            <ul id="slide">
+                <li><img src="img/experience/Experience1.jpg" alt="Socialización de Juegos Florales"></li>
+                <li><img src="img/experience/Experience2.jpg" alt="Presentación de los Juegos Florales"></li>
+                <li><img src="img/experience/Experience3.jpg" alt="Centro de concurso de Robótica"></li>
+                <li><img src="img/experience/Experience4.jpg" alt="Mención de los ganadores de los Juegos Florales"></li>
+                <li><img src="img/experience/Experience5.png" alt="Nuestro Robot para los Juegos Florales"></li>
+            </ul>
+        </fieldset>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; Kizzi | Versión 2020 | Powered by <a href="http://natygutierrez.tonohost.com">Gysmoy & Kizzi</a></p>
+        <hr>
+        <ul>
+            <li><a href="https://www.facebook.com/" class="facebook"></a></li>
+            <li><a href="https://www.youtube.com/" class="youtube"></a></li>
+            <li><a href="https://www.instagram.com/" class="instagram"></a></li>
+            <li><a href="https://www.linkedin.com/" class="linkedin"></a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=051999800987&text=Vengo%20de%20tu%20sitio%20web" class="whatsapp"></a></li>
+        </ul>
+    </footer>
+    <script type="text/javascript" src="assets/js/slippry.min.js"></script>
+    <script text="type/javascript" src="assets/js/main.js"></script>
+</body>
+</html>

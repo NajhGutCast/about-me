@@ -1,0 +1,229 @@
+<style>
+    ::-webkit-scrollbar{
+        width: 7px;
+        height: 7px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: #05c06f;
+        border-radius: 5px;
+    }
+    * {
+        color: #fff;
+    }
+</style>
+<pre><code>&#60;?php
+include "assets/php/connect.php";
+include "assets/php/str_replace.php";
+
+session_start();
+
+if(isset($_GET['cerrar_sesion'])){
+    session_unset(); 
+    session_destroy();
+    header('location: dialog.php');
+}
+
+// Alerta de inicio de sesión
+if (isset($_SESSION['first'])) {
+    echo '&#60;script&#62;alert("Se ha iniciado sesión como ' . $_SESSION['first'] . '")&#60;/script&#62;';
+    $_SESSION['first'] = null;
+}
+
+// Declaración de usuario
+if (isset($_POST['username'])) {
+    $_SESSION['username'] = $_POST['username'];
+    $_SESSION['first'] = $_POST['username'];
+    header('location: dialog.php');
+}
+
+// Iserción de mensaje en la base de datos
+if (isset($_POST['message'])) {
+    $user_insert = $_SESSION['username'];
+    $msg_insert = trim(str_replace($esto, $por_esto, $_POST['message'])); //las variables vienen desde assets/php/str_replace.php
+    $msg_sql_insert = "INSERT INTO `chat` (`user`, `message`, `date`, `status`)
+        VALUES ('$user_insert', '$msg_insert', current_timestamp(), 'active')";
+    if($db_connect-&#62;query($msg_sql_insert) == false) {
+        echo '
+        &#60;script&#62;alert("No se ha podido enviar el mensaje")&#60;/scrip&#62;
+        ';
+    } else {
+        header('location: dialog.php');
+    }
+}
+
+// Mostrar y ocultar Mensaje
+if (isset($_GET['hide'])) {
+    $id_update = $_GET['hide'];
+    $message_update = "UPDATE `chat` SET `status` = 'hidden' WHERE `chat`.`id` = $id_update";
+    if ($db_connect -&#62; query($message_update) == false) {
+        echo '&#60;script&#62;alert("No se ha podido solicitar esta petición")&#60;/script&#62;';
+    } else {
+        header('location: dialog.php');
+    }
+} else if (isset($_GET['show'])) {
+    $id_update = $_GET['show'];
+    $message_update = "UPDATE `chat` SET `status` = 'active' WHERE `chat`.`id` = $id_update";
+    if ($db_connect -&#62; query($message_update) == false) {
+        echo '&#60;script&#62;alert("No se ha podido solicitar esta petición")&#60;/script&#62;';
+    } else {
+        header('location: dialog.php');
+    }
+}
+?&#62;
+
+&#60;!DOCTYPE html&#62;
+&#60;html lang="es-ES"&#62;
+&#60;head&#62;
+    &#60;meta charset="UTF-8"&#62;
+    &#60;meta name="viewport" content="width=device-width, initial-scale=1.0"&#62;
+    &#60;title&#62;Chat | Gysmoy&#60;/title&#62;
+    &#60;link rel="stylesheet" href="assets/css/style.css"&#62;
+    &#60;link rel="stylesheet" href="assets/css/header_style.css"&#62;
+    &#60;link rel="stylesheet" href="assets/css/footer_style.css"&#62;
+    &#60;script text="type/javascript" src="assets/js/main.js"&#62;&#60;/script&#62;
+&#60;/head&#62;
+&#60;body&#62;
+    &#60;nav&#62;
+        &#60;div&#62;
+            &#60;ul class="links"&#62;
+                &#60;li onclick="location.href='index.html'"&#62;Inicio&#60;/li&#62;
+                &#60;li class="selected"&#62;Chat de Muestra&#60;/li&#62;
+                &#60;li onclick="location.href='comments.php'"&#62;Comentarios&#60;/li&#62;
+                &#60;?php
+                if (isset($_SESSION['username'])) {
+                    echo '
+                    &#60;li onclick="location.href=\'dialog.php?cerrar_sesion=1\'"&#62;Cerrar sesión&#60;/li&#62;
+                    ';
+                }
+                ?&#62;
+            &#60;/ul&#62;
+            &#60;details class="links-mobile"&#62;
+                &#60;summary&#62;Chat de Muestra&#60;/summary&#62;
+                &#60;button onclick="location.href='index.html'"&#62;Inicio&#60;/button&#62;&#60;br&#62;
+                &#60;button onclick="location.href='comments.php'"&#62;Comentarios&#60;/button&#62;
+                &#60;?php
+                if (isset($_SESSION['username'])) {
+                    echo '
+                    &#60;br&#62;&#60;button onclick="location.href=\'dialog.php?cerrar_sesion=1\'"&#62;Cerrar sesión&#60;/button&#62;
+                    ';
+                }
+                ?&#62;
+            &#60;/details&#62;
+        &#60;/div&#62;
+    &#60;/nav&#62;
+&#60;?php
+if (!isset($_SESSION['username'])) {
+?&#62;
+    &#60;main class="register"&#62;
+        &#60;br&#62;
+        &#60;form action="dialog.php" method="post" autocomplete="off"&#62;
+            &#60;center&#62;    
+                &#60;h2&#62;Ingrese un nombre de Usuario&#60;/h2&#62;
+                &#60;input type="text" name="username" placeholder="Usuario" maxlength="12" autofocus required&#62;
+                &#60;br&#62;
+                &#60;button type="submit"&#62;Entrar&#60;/button&#62;
+            &#60;/center&#62;
+        &#60;/form&#62;
+    &#60;/main&#62;
+&#60;?php
+} else {
+?&#62;
+    &#60;main class="chat"&#62;
+        &#60;div id="caja" title="Decolora la página. Click para coger. Doble clic para soltar"&#62;&#60;/div&#62;
+        &#60;center&#62;
+            &#60;table class="sender"&#62;
+                &#60;tr&#62;
+                    &#60;form action="dialog.php" method="post"&#62;
+                        &#60;td&#62;
+                            &#60;textarea autofocus name="message" rows="3" placeholder="Escribe un mensaje [Dos espacios para salto de línea]"
+                                maxlength="500" required&#62;&#60;/textarea&#62;
+                        &#60;/td&#62;
+                        &#60;td&#62;&#60;button type="submit" title="Enviar mensaje"&#62;➢&#60;/button&#62;&#60;/td&#62;
+                    &#60;/form&#62;
+                &#60;/tr&#62;
+            &#60;/table&#62;
+            &#60;div&#62;
+                &#60;table class="shower"&#62;
+                    &#60;?php
+                    $msg_sql = "SELECT * FROM `chat` ORDER BY `chat`.`date` DESC";
+                    $msg_result = $db_connect -&#62; query($msg_sql);
+                    if ($msg_result -&#62; num_rows &#62; 0) {
+                        while ($msg_rows = $msg_result -&#62; fetch_assoc()) {
+                            $id = $msg_rows['id'];
+                            $username = $msg_rows['user'];
+                            $date = $msg_rows['date'];
+                            $status = $msg_rows['status'];
+                            switch ($status) {
+                                case 'hidden':
+                                    $message = '☍ &#60;i&#62;Oculto y encriptado&#60;/i&#62; ☍';
+                                    break;
+                                
+                                default:
+                                    $message = $msg_rows['message'];
+                                    break;
+                            }
+                            if ($_SESSION['username'] == $username) {
+                                echo '
+                                &#60;tr&#62;
+                                    &#60;td width="28px"&#62;';
+                                    if ($status == "active") {
+                                        echo '
+                                        &#60;button onclick="location.href=\'dialog.php?hide='.$id.'\'" title="Ocultar mensaje"&#62;✎&#60;/button&#62;
+                                        &#60;p&#62;ㅤ&#60;/p&#62;
+                                        ';
+                                    } else {
+                                        echo '
+                                        &#60;button onclick="location.href=\'dialog.php?show='.$id.'\'" title="Mostrar mensaje" style="background-color: #00cfe0bb; border-color: #00cfe0bb"&#62;✎&#60;/button&#62;
+                                        &#60;p&#62;ㅤ&#60;/p&#62;
+                                        ';
+                                    }
+                                echo '
+                                    &#60;/td&#62;
+                                    &#60;td style="padding-left: 10px; padding-right: 25px"&#62;
+                                        &#60;p&#62;&#128100; Tú&#60;/p&#62;
+                                    &#60;p class="'.$status.'"&#62;'.$message.'&#60;/p&#62;
+                                        &#60;p&#62;&#128343; '.$date.'&#60;/p&#62;
+                                        &#60;p&#62;ㅤ&#60;/p&#62;
+                                    &#60;/td&#62;
+                                &#60;/tr&#62;
+                                ';
+                            } else {
+                                echo '
+                                &#60;tr&#62;
+                                    &#60;td colspan="2" align="right" style="padding-left: 25px"&#62;
+                                        &#60;p&#62;&#128100; '.$username.'&#60;/p&#62;
+                                    &#60;p class="'.$status.'" style="background-color: #3a3b3cbb; border-radius: 20px 0 20px 20px"&#62;'.$message.'&#60;/p&#62;
+                                        &#60;p&#62;&#128343; '.$date.'&#60;/p&#62;
+                                        &#60;p&#62;ㅤ&#60;/p&#62;
+                                    &#60;/td&#62;
+                                &#60;/tr&#62;
+                                ';
+                            }
+                        }
+                    } else {
+                        echo '
+                        &#60;tr&#62;&#60;td colspan="2" align="center"&#62;&#60;h3&#62;-- Aún no hay mensajes --&#60;/h3&#62;&#60;/td&#62;&#60;/tr&#62; 
+                        ';
+                    }
+                    ?&#62;
+                &#60;/table&#62;
+            &#60;/div&#62;
+        &#60;/center&#62;
+    &#60;/main&#62;
+&#60;?php
+}
+$db_connect -&#62; close();
+?&#62;
+    &#60;footer&#62;
+        &#60;p&#62;Copyright &copy; Gysmoy | Versión 2020 | Powered by &#60;a href="http://gysmoy-kizzi.epizy.com"&#62;Gysmoy & Kizzi&#60;/a&#62;&#60;/p&#62;
+        &#60;hr&#62;
+        &#60;ul&#62;
+            &#60;li&#62;&#60;a target="_blank" href="https://www.facebook.com/Gysmoy/" class="facebook"&#62;&#60;/a&#62;&#60;/li&#62;
+            &#60;li&#62;&#60;a target="_blank" href="https://www.youtube.com/channel/UCrPkJjx9y_CidEZY9-O7dEg" class="youtube"&#62;&#60;/a&#62;&#60;/li&#62;
+            &#60;li&#62;&#60;a target="_blank" href="https://www.instagram.com/gysmoy/" class="instagram"&#62;&#60;/a&#62;&#60;/li&#62;
+            &#60;li&#62;&#60;a target="_blank" href="https://www.linkedin.com/in/gysmoy/" class="linkedin"&#62;&#60;/a&#62;&#60;/li&#62;
+            &#60;li&#62;&#60;a target="_blank" href="https://api.whatsapp.com/send?phone=999413711&text=Vengo%20de%20tu%20sitio%20web" class="whatsapp"&#62;&#60;/a&#62;&#60;/li&#62;
+        &#60;/ul&#62;
+    &#60;/footer&#62;
+&#60;/body&#62;
+&#60;/html&#62;</code></pre>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Kizzi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header_style.css">
+    <link rel="stylesheet" href="assets/css/footer_style.css">
+    <script text="type/javascript" src="assets/js/main.js"></script>
+</head>
+<body>
+    <nav>
+        <div>
+            <ul class="links">
+                <li onclick="location.href='index.html'">Inicio</li>
+                <li onclick="location.href='experience.html'">Experiencia</li>
+                <li onclick="location.href='projects.html'">Proyectos</li>
+                <li class="selected">Contacto</li>
+            </ul>
+            <details class="links-mobile">
+                <summary>Contacto</summary>
+                <button onclick="location.href='index.html'">Inicio</button><br>
+                <button onclick="location.href='projects.html'">Proyectos</button><br>
+                <button onclick="location.href='contact.html'">Contacto</button>
+            </details>
+        </div>
+    </nav>
+    <main class="contact">
+        <h1>Información de contacto</h1>
+        <p class="contact-info">Bienvenido a la sección de contacto, en primer lugar
+            se muestra el correo y teléfono para que
+            puedan contactarnos de manera directa, y en segundo lugar
+            esta un formulario en el cual puedes rellenar
+            tus datos para que pueda contactarte
+            de acuerdo a la razón del contacto que se brinde.
+        </p>
+        <div class="info">
+            <div class="personal-info">
+                <div class="correos">
+                    <h2>CORREOS</h2>
+                    <p>najhelygutierrezcastro@gmail.com</p>
+                    <p>kizzigutierrez@gmail.com</p>
+                </div>
+                <div class="telefonos">
+                    <h2>TELÉFONO</h2>
+                    <p>[+51] 999 800 987</p>
+                    <p>[+51] 991 442 915</p>
+                </div>
+            </div>
+            <div class="formulario">
+                <h2>LLENE EL SIGUIENTE FORMULARIO</h2>
+                <form action="index.html" method="GET" align="center" autocomplete="off">
+                    <input class="fill" type="text" name="nombres" placeholder="Nombre completo">
+                    <input class="half" type="email" name="email" placeholder="Correo electrónico">
+                    <input class="half" type="tel" name="telefono" placeholder="Teléfono de contacto">
+                    <textarea class="fill" name="desc" rows="4" placeholder="Quiero contactarle porque..."></textarea>
+                    <input class="submit" type="submit" value="Enviar datos">
+                </form>
+            </div>
+        </div>
+        <h1>Ubicación en Google Maps</h1>
+        <p class="contact-info">Para dar una mejor idea de mi ubicación laboral
+            actualmente, se muestra un mapa debajo. Sirvase a usarlo con fines
+            de trabajo.
+        </p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62149.17321337402!2d-74.26998304320384!3d-13.20500601989399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127d696518c76d%3A0x94b276305305ffd3!2sCarmen%20Alto!5e0!3m2!1ses!2spe!4v1609297806535!5m2!1ses!2spe"
+            width="100%" height="450" frameborder="0" style="border:0; border-radius: 10px;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; Kizzi | Versión 2020 | Powered by <a href="http://natygutierrez.tonohost.com">Gysmoy & Kizzi</a></p>
+        <hr>
+        <ul>
+            <li><a href="https://www.facebook.com/" class="facebook"></a></li>
+            <li><a href="https://www.youtube.com/" class="youtube"></a></li>
+            <li><a href="https://www.instagram.com/" class="instagram"></a></li>
+            <li><a href="https://www.linkedin.com/" class="linkedin"></a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=051999800987&text=Vengo%20de%20tu%20sitio%20web" class="whatsapp"></a></li>
+        </ul>
+    </footer>
+</body>
+</html>

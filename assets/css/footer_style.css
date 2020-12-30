@@ -1,0 +1,86 @@
+footer {
+    margin: auto;
+    padding: 60px 20px 40px;
+    background-color: #242526bb;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 10px #000000bb;
+    text-align: center;
+    color: #fff;
+    max-width: 1200px;
+}
+
+@media (max-width: 840px) {
+    footer {
+        border-radius: 5px 5px 0 0;
+    }
+}
+@media (max-width: 600px) {
+    footer {
+        border-radius: 0px;
+    }
+}
+
+footer a {
+    text-decoration: none;
+    color: #2e89ff;
+    transition: all 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer hr {
+    margin: 20px auto;
+    width: 250px;
+    border: none;
+    height: 1px;
+    background-color: #fff;
+}
+
+footer ul {
+    list-style: none;
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer ul li a {
+    width: 20px;
+    padding: 20px;
+    margin: 0 10px 0;
+}
+
+@media (max-width: 840px) {
+    footer ul li a {
+        margin: 0 4px 0;
+    }
+}
+@media (max-width: 600px) {
+    footer ul li a {
+        margin: 0 2px 0;
+    }
+}
+
+footer ul li a:hover {
+    background-color: #2e89ff;
+    border-radius: 10px;
+    box-shadow: 0 0 25px #2e89ff;
+}
+
+footer ul li .facebook {content: url("../../icons/facebook.svg");}
+footer ul li .facebook:hover {content: url("../../icons/facebook_hover.svg");}
+
+footer ul li .youtube {content: url("../../icons/youtube.svg");}
+footer ul li .youtube:hover {content: url("../../icons/youtube_hover.svg");}
+
+footer ul li .instagram {content: url("../../icons/instagram.svg");}
+footer ul li .instagram:hover {content: url("../../icons/instagram_hover.svg");}
+
+footer ul li .linkedin {content: url("../../icons/linkedin.svg");}
+footer ul li .linkedin:hover {content: url("../../icons/linkedin_hover.svg");}
+
+footer ul li .whatsapp {content: url("../../icons/whatsapp.svg");}
+footer ul li .whatsapp:hover {content: url("../../icons/whatsapp_hover.svg");}

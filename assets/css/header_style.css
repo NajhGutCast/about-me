@@ -1,0 +1,128 @@
+nav {
+    background-color: #242526bb;
+    padding: 20px;
+    height: 65px;
+    margin: auto;
+    max-width: 1200px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px #000000bb;
+}
+
+@media (max-width: 840px) {
+    nav {
+        border-radius: 0 0 5px 5px;
+    }
+}
+@media (max-width: 600px) {
+    nav {
+        border-radius: 0px;
+    }
+}
+
+nav div {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #242526bb;
+    border-radius: 10px;
+    width: max-content;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+nav div:hover {
+    background-color: #242526;
+}
+
+nav div ul {
+    list-style: none;
+    display: flex;
+    width: max-content;
+    margin: auto;
+}
+
+nav div ul li, nav div ul button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: medium;
+    color: #fff;
+}
+
+nav div ul .selected {
+    background-color: #3a3b3cbb;
+}
+
+nav div ul li:hover, nav div ul button:hover {
+    background-color: #2e89ffbb;
+    box-shadow: 0 0 25px #2e89ffbb;
+}
+
+nav div details {
+    display: none;
+    cursor: pointer;
+    background-color: #242526bb;
+    width: max-content;
+    margin: auto;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+/* Cambiando el icono del summary */
+summary::-webkit-details-marker {
+    display: none;
+}
+nav div details summary:before {
+    content: "☰ ";
+}
+/* Cambiando el icono del summary */
+
+nav div details summary {
+    padding: 10px 20px;
+    outline: none;
+    width: calc(100vw - 120px);
+    transition: all 0.3s;
+    border-radius: 5px;
+    background-color: #3a3b3cbb;
+}
+
+nav div details summary:hover {
+    background-color: #2e89ffbb;
+    box-shadow: 0 0 25px #2e89ffbb;
+}
+
+nav div details button {
+    padding: 10px 20px;
+    margin: 10px 0 0;
+    width: calc(100vw - 80px);
+    font-size: medium;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #242526bb;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s;
+}
+nav div details button:hover {
+    background-color: #2e89ffbb;
+    box-shadow: 0 0 25px #2e89ffbb;
+}
+
+@media (max-width: 720px) {
+    nav div details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: max-content;
+    }
+    nav div ul {
+        display: none;
+    }
+}

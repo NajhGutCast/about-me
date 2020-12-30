@@ -1,0 +1,582 @@
+<style>
+    ::-webkit-scrollbar{
+        width: 7px;
+        height: 7px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: #05c06f;
+        border-radius: 5px;
+    }
+    * {
+        color: #fff;
+    }
+</style>
+<pre><code>package formulario;
+
+import java.awt.Color;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import javax.swing.JOptionPane;
+
+public class FrmPrincipal extends javax.swing.JFrame {
+    
+    int x, y;
+    
+    public FrmPrincipal() {
+        this.setUndecorated(true);
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        Header = new javax.swing.JPanel();
+        Banner = new javax.swing.JLabel();
+        BotonCerrar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        txtApellidos = new javax.swing.JTextField();
+        txtNombres = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtHoras = new javax.swing.JTextField();
+        txtPrecio = new javax.swing.JTextField();
+        txtECivil = new javax.swing.JRadioButton();
+        BotonGuardar = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        Mostrar1 = new javax.swing.JLabel();
+        Mostrar2 = new javax.swing.JLabel();
+        Mostrar3 = new javax.swing.JLabel();
+        Mostrar4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        Mostrar5 = new javax.swing.JLabel();
+        Mostrar6 = new javax.swing.JLabel();
+        Mostrar7 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        Mostrar8 = new javax.swing.JLabel();
+        showNombres = new javax.swing.JTextField();
+        showECivil = new javax.swing.JTextField();
+        showHoras = new javax.swing.JTextField();
+        showSNP = new javax.swing.JTextField();
+        showPrecio = new javax.swing.JTextField();
+        showSBruto = new javax.swing.JTextField();
+        showBono = new javax.swing.JTextField();
+        showSNeto = new javax.swing.JTextField();
+        BotonLimpiar = new javax.swing.JButton();
+        Footer = new javax.swing.JPanel();
+        Copyright = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Molinos Comolsa");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Header.setBackground(new java.awt.Color(44, 151, 223));
+
+        Banner.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        Banner.setForeground(new java.awt.Color(255, 255, 255));
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Banner.setText("Molinos Comolsa | Registro");
+        Banner.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Banner.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                BannerMouseDragged(evt);
+            }
+        });
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BannerMousePressed(evt);
+            }
+        });
+
+        BotonCerrar.setBackground(new java.awt.Color(233, 75, 53));
+        BotonCerrar.setForeground(new java.awt.Color(255, 255, 255));
+        BotonCerrar.setText("✘");
+        BotonCerrar.setBorder(null);
+        BotonCerrar.setBorderPainted(false);
+        BotonCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonCerrar.setFocusPainted(false);
+        BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCerrarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
+        Header.setLayout(HeaderLayout);
+        HeaderLayout.setHorizontalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Banner, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        HeaderLayout.setVerticalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Banner, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(BotonCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 60));
+
+        jPanel2.setBackground(new java.awt.Color(237, 241, 242));
+
+        txtApellidos.setBackground(new java.awt.Color(190, 195, 199));
+        txtApellidos.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtApellidos.setForeground(new java.awt.Color(51, 73, 96));
+
+        txtNombres.setBackground(new java.awt.Color(190, 195, 199));
+        txtNombres.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtNombres.setForeground(new java.awt.Color(51, 73, 96));
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(44, 62, 82));
+        jLabel3.setText("Apellidos:");
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(44, 62, 82));
+        jLabel4.setText("Nombres:");
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(44, 62, 82));
+        jLabel5.setText("Estado Civil:");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(44, 62, 82));
+        jLabel6.setText("N° Horas:");
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel7.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(44, 62, 82));
+        jLabel7.setText("Precio x Hora:");
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        txtHoras.setBackground(new java.awt.Color(190, 195, 199));
+        txtHoras.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtHoras.setForeground(new java.awt.Color(51, 73, 96));
+
+        txtPrecio.setBackground(new java.awt.Color(190, 195, 199));
+        txtPrecio.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtPrecio.setForeground(new java.awt.Color(51, 73, 96));
+
+        txtECivil.setForeground(new java.awt.Color(51, 73, 96));
+        txtECivil.setText("CASADO");
+
+        BotonGuardar.setBackground(new java.awt.Color(26, 175, 93));
+        BotonGuardar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        BotonGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        BotonGuardar.setText("Calcular Sueldo Total");
+        BotonGuardar.setBorder(null);
+        BotonGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonGuardarActionPerformed(evt);
+            }
+        });
+
+        Mostrar1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Mostrar1.setForeground(new java.awt.Color(44, 62, 82));
+        Mostrar1.setText("Apellidos y Nombres:");
+
+        Mostrar2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Mostrar2.setForeground(new java.awt.Color(44, 62, 82));
+        Mostrar2.setText("Estado Civil:");
+        Mostrar2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Mostrar3.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Mostrar3.setForeground(new java.awt.Color(44, 62, 82));
+        Mostrar3.setText("Horas Trabajadas:");
+        Mostrar3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Mostrar4.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Mostrar4.setForeground(new java.awt.Color(44, 62, 82));
+        Mostrar4.setText("Precio x Hora:");
+        Mostrar4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Mostrar5.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Mostrar5.setForeground(new java.awt.Color(44, 62, 82));
+        Mostrar5.setText("Sueldo Bruto:");
+        Mostrar5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Mostrar6.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Mostrar6.setForeground(new java.awt.Color(44, 62, 82));
+        Mostrar6.setText("Descuento SNP:");
+        Mostrar6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Mostrar7.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Mostrar7.setForeground(new java.awt.Color(44, 62, 82));
+        Mostrar7.setText("Bonificación Familiar:");
+        Mostrar7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Mostrar8.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Mostrar8.setForeground(new java.awt.Color(44, 62, 82));
+        Mostrar8.setText("Sueldo Neto:");
+        Mostrar8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        showNombres.setEditable(false);
+        showNombres.setBackground(new java.awt.Color(237, 241, 242));
+        showNombres.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        showNombres.setForeground(new java.awt.Color(44, 62, 82));
+
+        showECivil.setEditable(false);
+        showECivil.setBackground(new java.awt.Color(237, 241, 242));
+        showECivil.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        showECivil.setForeground(new java.awt.Color(44, 62, 82));
+
+        showHoras.setEditable(false);
+        showHoras.setBackground(new java.awt.Color(237, 241, 242));
+        showHoras.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        showHoras.setForeground(new java.awt.Color(44, 62, 82));
+
+        showSNP.setEditable(false);
+        showSNP.setBackground(new java.awt.Color(237, 241, 242));
+        showSNP.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        showSNP.setForeground(new java.awt.Color(233, 75, 53));
+
+        showPrecio.setEditable(false);
+        showPrecio.setBackground(new java.awt.Color(237, 241, 242));
+        showPrecio.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        showPrecio.setForeground(new java.awt.Color(44, 62, 82));
+
+        showSBruto.setEditable(false);
+        showSBruto.setBackground(new java.awt.Color(237, 241, 242));
+        showSBruto.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        showSBruto.setForeground(new java.awt.Color(44, 62, 82));
+
+        showBono.setEditable(false);
+        showBono.setBackground(new java.awt.Color(237, 241, 242));
+        showBono.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        showBono.setForeground(new java.awt.Color(44, 62, 82));
+
+        showSNeto.setEditable(false);
+        showSNeto.setBackground(new java.awt.Color(237, 241, 242));
+        showSNeto.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        showSNeto.setForeground(new java.awt.Color(44, 62, 82));
+
+        BotonLimpiar.setBackground(new java.awt.Color(232, 126, 4));
+        BotonLimpiar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        BotonLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        BotonLimpiar.setText("Limpiar Datos");
+        BotonLimpiar.setBorder(null);
+        BotonLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonLimpiarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jSeparator4)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4)
+                                .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtECivil))
+                            .addGap(71, 71, 71)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(47, 47, 47)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(Mostrar2)
+                            .addComponent(Mostrar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Mostrar3)
+                            .addComponent(Mostrar4)
+                            .addComponent(jSeparator2))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(showNombres)
+                            .addComponent(showECivil)
+                            .addComponent(showHoras)
+                            .addComponent(showPrecio)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Mostrar8)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Mostrar7)
+                                    .addComponent(Mostrar6)
+                                    .addComponent(Mostrar5)
+                                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(showSNP, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showBono, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showSNeto, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showSBruto, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(BotonGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtECivil))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar1)
+                    .addComponent(showNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar2)
+                    .addComponent(showECivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar3)
+                    .addComponent(showHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar4)
+                    .addComponent(showPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar5)
+                    .addComponent(showSBruto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar6)
+                    .addComponent(showSNP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar7)
+                    .addComponent(showBono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar8)
+                    .addComponent(showSNeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(97, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 480, 690));
+
+        Footer.setBackground(new java.awt.Color(34, 127, 187));
+
+        Copyright.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        Copyright.setForeground(new java.awt.Color(255, 255, 255));
+        Copyright.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Copyright.setText("Developed by GK Design | Versión 1.0");
+
+        javax.swing.GroupLayout FooterLayout = new javax.swing.GroupLayout(Footer);
+        Footer.setLayout(FooterLayout);
+        FooterLayout.setHorizontalGroup(
+            FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FooterLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Copyright, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        FooterLayout.setVerticalGroup(
+            FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FooterLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Copyright, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(Footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 750, 480, 40));
+
+        pack();
+    }// </editor-fold>                        
+
+    private void BannerMousePressed(java.awt.event.MouseEvent evt) {                                    
+        x = evt.getX();
+        y = evt.getY();
+    }                                   
+
+    private void BannerMouseDragged(java.awt.event.MouseEvent evt) {                                    
+        Point point = MouseInfo.getPointerInfo().getLocation();
+        setLocation(point.x - x, point.y - y);
+    }                                   
+
+    private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        System.exit(0);
+    }                                           
+
+    private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        String Apellidos, Nombres, ECivil;
+        float Horas, Precio, SBruto, SNP, Bonificacion, SNeto;
+        
+        try {
+            Apellidos = txtApellidos.getText();
+            Nombres = txtNombres.getText();
+
+            Horas = Float.parseFloat(txtHoras.getText());
+            Precio = Float.parseFloat(txtPrecio.getText());
+
+            SBruto = Horas * Precio;
+            SNP = (float) (SBruto * 0.13);
+            if (txtECivil.isSelected()) {
+                Bonificacion = (float) (SBruto * 0.07);
+                ECivil = "CASADO";
+                showBono.setForeground(Color.blue);
+                showBono.setText(String.valueOf(Bonificacion));
+            } else {
+                Bonificacion = 0;
+                ECivil = "SOLTERO";
+                showBono.setForeground(Color.black);
+                showBono.setText("No tiene bonificación");
+            }
+
+            SNeto = SBruto - SNP + Bonificacion;
+
+            String NCompleto = Apellidos.trim() + " " + Nombres.trim();
+            showNombres.setText(NCompleto);
+            showECivil.setText(ECivil);
+            showHoras.setText(String.valueOf(Horas));
+            showPrecio.setText(String.valueOf(Precio));
+            showSBruto.setText(String.valueOf(SBruto));
+            showSNP.setText(String.valueOf(SNP));
+            showSNeto.setText(String.valueOf(SNeto));
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "¡Revise que los datos estén llenados correctamente!");
+        }
+    }                                            
+
+    private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        txtApellidos.setText("");
+        txtNombres.setText("");
+        txtECivil.setSelected(false);
+        txtHoras.setText("");
+        txtPrecio.setText("");
+        
+        showNombres.setText("");
+        showECivil.setText("");
+        showHoras.setText("");
+        showPrecio.setText("");
+        showSBruto.setText("");
+        showSNP.setText("");
+        showBono.setText("");
+        showSNeto.setText("");
+            
+    }                                            
+
+    /**
+        * @param args the command line arguments
+        */
+    public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FrmPrincipal().setVisible(true);
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel Banner;
+    private javax.swing.JButton BotonCerrar;
+    private javax.swing.JButton BotonGuardar;
+    private javax.swing.JButton BotonLimpiar;
+    private javax.swing.JLabel Copyright;
+    private javax.swing.JPanel Footer;
+    private javax.swing.JPanel Header;
+    private javax.swing.JLabel Mostrar1;
+    private javax.swing.JLabel Mostrar2;
+    private javax.swing.JLabel Mostrar3;
+    private javax.swing.JLabel Mostrar4;
+    private javax.swing.JLabel Mostrar5;
+    private javax.swing.JLabel Mostrar6;
+    private javax.swing.JLabel Mostrar7;
+    private javax.swing.JLabel Mostrar8;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTextField showBono;
+    private javax.swing.JTextField showECivil;
+    private javax.swing.JTextField showHoras;
+    private javax.swing.JTextField showNombres;
+    private javax.swing.JTextField showPrecio;
+    private javax.swing.JTextField showSBruto;
+    private javax.swing.JTextField showSNP;
+    private javax.swing.JTextField showSNeto;
+    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JRadioButton txtECivil;
+    private javax.swing.JTextField txtHoras;
+    private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtPrecio;
+    // End of variables declaration                   
+}</code></pre>
