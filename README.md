@@ -1,2 +1,2 @@
-# about-me
+# Sobre mi
 Mi portafolio
